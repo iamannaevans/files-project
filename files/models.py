@@ -1,4 +1,5 @@
 from django.db import models
+import hashlib
 
 # Create your models here.
 class File(models.Model):
@@ -6,6 +7,11 @@ class File(models.Model):
     description = models.TextField()
     public = models.BooleanField(default=False)
     file = models.FileField()
+
+
+    def hash(self):
+        file = open(self.file.path, 'rb').read()
+        return hashlib.sha512(file).hexdigest()
 
     def __str__(self):
         return self.name
