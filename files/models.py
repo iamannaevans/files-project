@@ -1,13 +1,14 @@
 from django.db import models
 import hashlib
+from taggit.managers import TaggableManager
 
 # Create your models here.
 class File(models.Model):
     name = models.CharField(max_length=60)
     description = models.TextField()
     public = models.BooleanField(default=False)
+    tags = TaggableManager(blank=True)
     file = models.FileField()
-
 
     def hash(self):
         file = open(self.file.path, 'rb').read()
