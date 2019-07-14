@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'files',
     'taggit',
+    'taggit_serializer',
 ]
 
 MIDDLEWARE = [

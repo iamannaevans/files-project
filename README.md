@@ -16,3 +16,10 @@ Start server:
 ```shell
 python manage.py runserver
 ```
+
+## Tags
+
+To add tags in DRF form, input an array of tags, like this:
+```
+[ "Hello World", "New Tag" ]
+```
