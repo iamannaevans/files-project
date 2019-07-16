@@ -2,7 +2,7 @@ from django.db import models
 import hashlib
 from taggit.managers import TaggableManager
 
-# Create your models here.
+
 class File(models.Model):
     name = models.CharField(max_length=60)
     description = models.TextField()
